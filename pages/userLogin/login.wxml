@@ -1,0 +1,30 @@
+<view>
+  <view class="login-icon">
+    <image class="login-img" src="../resource/images/dsp.jpg"></image>
+  </view>
+  <view class="login-form">
+    <form bindsubmit="doLogin">
+      <!-- 账号 -->
+      <view class="inputView">
+        <image class="nameImage" src="../resource/images/username.png"></image>
+        <label class="loginLable">账号</label>
+        <input name="username" placeholder="请输入账号" class="inputText"></input>
+      </view>
+      <!-- 分割线 -->
+      <view class="line"></view>
+      <!-- 密码 -->
+      <view class="inputView">
+        <image class="KeyImage" src="../resource/images/password.png"></image>
+        <label class="loginLable">密码</label>
+        <input name="password" password="true" placeholder="请输入密码" class="inputText"></input>
+      </view>
+      <!-- 按钮 -->
+      <view>
+        <button type="primary" form-type="submit" class="loginBtn">登录</button>
+      </view>
+      <view>
+        <button type="warn" class="goRegistBtn" bindtap="goRegistPage">没有账号？点击注册</button>
+      </view>
+    </form>
+  </view>
+</view>
