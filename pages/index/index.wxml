@@ -1,7 +1,7 @@
 <view>
   <view class="container">
     <block wx:if="{{isMe}}">
-      <image src="{{faceUrl}}" class="face" bindtap=""></image>
+      <image src="{{faceUrl}}" class="face" bindtap="upLoadFace"></image>
     </block>
     <block wx:if="{{!isMe}}">
       <image src="{{faceUrl}}" class="face"></image>
