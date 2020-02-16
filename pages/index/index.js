@@ -10,6 +10,36 @@ Page({
     var me = this;
     var user = app.getGlobalUserInfo();
     var userId = user.id;
+
+    wx.showLoading({
+      title: '请等待',
+    })
+    var serverUrl = app.serverUrl;
+     wx.request({
+      url: serverUrl + '/user/query?userId=' + user.id,
+      method: "POST",
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function(res) {
+        console.log(res.data);
+        wx.hideLoading();
+        if (res.data.status == 200) {
+          var userInfo = res.data.data;
+          var facepath = '../resource/images/noneface.png';
+          if(userInfo.faceImage!==null && userInfo.faceImage!='' && userInfo.faceImage!=undefined){
+             facepath = serverUrl + userInfo.faceImage;
+          }
+          me.setData({
+            faceUrl:facepath,
+            fansCount:userInfo.fansCounts,
+            followCounts: userInfo.followCounts,
+            receiveLikeCounts: userInfo.receiveLikeCounts,
+            nickname:userInfo.nickname
+          })
+        }
+      }
+    })
   },
   logout: function(obj) {
     var user = app.getGlobalUserInfo();
