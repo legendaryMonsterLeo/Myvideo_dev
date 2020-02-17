@@ -1,0 +1,22 @@
+<view>
+  <form bindsubmit="upload">
+    <radio-group name="bgmId">
+      <block wx:for="{{bgmList}}">
+        <view class="container">
+          <audio name="{{item.name}}" author="{{item.author}}" src="{{serverUrl}}{{item.path}}" style="width:300px" id="myAudio" controls loop>
+          </audio>
+          <radio style="margin-top:20px" value="{{item.id}}"></radio>
+        </view>
+      </block>
+    </radio-group>
+    <view class="conts">
+      <label class="label">视频描述</label>
+      <textarea class="areas" placeholder='视频描述' maxlength="{{VideoNoteMax}}" bindinput="inputs">
+        <text class="currentWordNumber">{{currentWordNumber|0}}/{{VideoNoteMax}}</text>
+        <text class="hint">{{texts}}</text>
+      </textarea>
+    </view>
+    <button class="submitButton" type="primary" form-type="submit">上传视频</button>
+    <button class="resetButton" type="warn" form-type="reset">重置</button>
+  </form>
+</view>

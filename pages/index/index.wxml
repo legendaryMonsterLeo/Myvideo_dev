@@ -9,8 +9,8 @@
     <label class="nickname">{{nickname}}</label>
 
     <block wx:if="{{isMe}}">
-      <button size="mini" type="primary" bindtap="">上传作品</button>
-      <button size="mini" type='warn' class="logout" bindtap="logout">注销</button>
+      <button size="mini"  bindtap="upLoadVideo">上传作品</button>
+      <button size="mini"  class="logout" bindtap="logout">注销</button>
     </block>
     <block wx:if="{{!isMe}}">
       <block wx:if="{{isFollow}}">

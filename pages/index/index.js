@@ -70,6 +70,37 @@ Page({
       }
     })
   },
+  upLoadVideo:function(obj){
+    var me = this;
+    wx.chooseVideo({
+      sourceType:['album','camera'],
+      maxDuration:15,
+      camera:'back',
+      success:function(res){
+        console.log(res);
+        var duration = res.duration;
+        var tempheight = res.height;
+        var tempwidth = res.width;
+        var tempVideoPath = res.tempFilePath;
+        var tempCoverPath = res.thumbTempFilePath; 
+        if(duration > 21){
+          wx.showToast({
+            title: '视频长度不能超过20秒',
+            icon:'none',
+            duration:2000
+          })
+        } else if (duration < 6) {
+          wx.showToast({
+            title: '视频长度不能少于5秒',
+            icon: 'none',
+            duration: 2000
+          })
+        }else{
+
+        }
+      }
+    })
+  },
   upLoadFace: function(obj) {
     var me = this;
     wx.chooseImage({

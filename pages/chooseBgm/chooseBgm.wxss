@@ -1,0 +1,58 @@
+/* pages/chooseBgm/chooseBgm.wxss */
+.inputView{
+  padding: 5px;
+  background-color: white;
+  line-height: 45px;
+  border: solid 1px whitesmoke;
+}
+.label{
+  color: gray;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}
+.submitButton{
+  width: 80%;
+  margin-top: 30rpx;
+}
+.resetButton{
+  width: 80%;
+  margin-top: 30rpx;
+}
+
+.conts{
+    width: 750rpx;
+    height: auto;
+    border: 1rpx soldi red;
+    margin-top: 30rpx;
+    background: #fff;
+}
+.areas{
+    height:200rpx;
+    width: 95%;
+    font-size: 30rpx;
+    text-indent: 28rpx;
+    border: 1rpx solid gainsboro;
+    padding-top: 30rpx;
+    margin: 10rpx auto;
+    overflow: hidden;
+    position: relative;
+}
+.currentWordNumber{
+    font-size: 28rpx;
+    color: gray;
+    position: absolute;
+    left: 593rpx;
+    top: -1rpx;
+}
+.hint{
+    font-size: 28rpx;
+    position: absolute;
+    top: 120rpx;
+    left: 30rpx;
+    color: #FF6600;
+}
+.container{
+  display: flex;
+  margin-top: 20rpx;
+  justify-content: space-around;
+}
