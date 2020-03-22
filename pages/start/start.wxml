@@ -1,0 +1,22 @@
+<!--start.wxml-->
+<view class="container">
+  <view class="remind-box" wx:if="{{remind}}">
+    <image class="remind-img" src="../resource/images/more/loading.gif"></image>
+  </view>
+  <block wx:else>
+    <image class="title" src="../resource/images/more/title8.png"></image>
+    <view class="content">
+      <view class="hd" style="transform:rotateZ({{angle}}deg);">
+        <image class="logo" src="{{userInfo.faceImage}}"></image>
+        <image class="wave" src="../resource/images/more/wave.png" mode="aspectFill"></image>
+        <image class="wave wave-bg" src="../resource/images/more/wave.png" mode="aspectFill"></image>
+      </view>
+      <view class="bd">
+         <!-- <image class="smalltitle" src="../resource/images/more/together.png"></image> -->
+         <text class="smalltitle">一起，让短视频变得更美</text>
+          <button class='bottom' type='primary' open-type="getUserInfo" bindgetuserinfo="doLogin">获取微信授权</button>
+        <text class="copyright">@梁悦</text>
+      </view>
+    </view>
+  </block>
+</view>

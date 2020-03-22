@@ -1,0 +1,15 @@
+{
+  "enablePullDownRefresh": false,
+  "backgroundTextStyle":"dark",
+  "navigationBarTitleText": "Together",
+  "navigationBarBackgroundColor": "#ffff",
+  "usingComponents": {
+    "mp-navigation-bar": "../../components/navigation-bar/navigation-bar",
+    "van-nav-bar": "../../components/dist/nav-bar/index",
+    "van-icon": "../../components/dist/icon/index",
+    "van-tab": "../../components/dist/tab/index",
+    "van-tabs": "../../components/dist/tabs/index",
+    "ab-waterfall": "../../components/abui/widgets/ab-waterfall/ab-waterfall",
+    "pullDownRefresh": "../../components/pullDownRefresh/pullDownRefresh"
+  }
+}

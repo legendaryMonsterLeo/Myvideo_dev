@@ -36,6 +36,8 @@
     margin: 10rpx auto;
     overflow: hidden;
     position: relative;
+    background-color: whitesmoke;
+    border-radius: 11rpx;
 }
 .currentWordNumber{
     font-size: 28rpx;
@@ -56,3 +58,20 @@
   margin-top: 20rpx;
   justify-content: space-around;
 }
+.chooseCover{
+  text-align: center;
+  margin-top: 10rpx;
+}
+.cover{
+  width: 95%;
+  height:430rpx;
+  border-radius: 11rpx;
+}
+
+.radio-group {
+    border-bottom: 1px solid #ddd;
+}
+.radio {
+    padding: 5px;
+}
+

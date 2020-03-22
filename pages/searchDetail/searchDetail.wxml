@@ -1,0 +1,3 @@
+<view class="container">
+  <ab-waterfall class="waterfall" page-no="{{pageNo}}" page-src="{{pageSrc}}" column-count="2" binditemtap="itemTap" />
+</view>

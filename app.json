@@ -1,15 +1,39 @@
 {
   "pages": [
-    "pages/chooseBgm/chooseBgm",
+    "pages/start/start",
+    "pages/searchView/searchView",
     "pages/userLogin/login",
+    "pages/videoDetailShow/videoDetailShow",
+    "pages/userRegist/regist",
+    "pages/videoShow/videoShow",
     "pages/index/index",
-    "pages/userRegist/regist"
+    "pages/chooseBgm/chooseBgm",
+    "pages/searchDetail/searchDetail",
+    "pages/userRoom/userRoom",
+    "pages/reports/reports"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Monster的毕业设计",
+    "navigationBarBackgroundColor": "#008000",
+    "navigationBarTitleText": "Together",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/videoShow/videoShow",
+        "iconPath": "/pages/resource/images/blank_video.png",
+        "selectedIconPath": "/pages/resource/images/green_video.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/pages/resource/images/blank_home.png",
+        "selectedIconPath": "/pages/resource/images/green_home.png"
+      }
+    ]
   },
   "debug": true,
   "sitemapLocation": "sitemap.json"

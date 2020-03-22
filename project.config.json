@@ -23,7 +23,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.10.1",
+	"libVersion": "2.10.2",
 	"appid": "wx620d365fb46ed3d6",
 	"projectname": "Myvideo_dev",
 	"debugOptions": {

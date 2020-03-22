@@ -1,0 +1,16 @@
+<view class="waterfall">
+  <view class="waterfall-column" style="width:{{columnWidth}}rpx;margin-right:{{columnNo<(columnArr.length-1)?horizontalSpace:0}}rpx;" wx:for-index="columnNo" wx:for-item="pageArr" wx:for="{{columnArr}}" wx:key="{{columnNo}}">
+    <block wx:for-index="pageNo" wx:for-item="dataArr" wx:for="{{pageArr}}" wx:key="{{pageNo}}">
+      <view class="waterfall-column-item" wx:for-index="itemNo" wx:for-item="item" wx:for="{{dataArr}}" wx:key="{{itemNo}}" bindtap="_itemTap" data-item="{{item}}">
+        <ab-easy-image class="waterfall-column-item__image"  style="height:{{item.imgH}}rpx;" src="{{item.imgUrl}}" mode="scaleToFill" radius="4px 4px 4px 4px" placeholder="{{placehodler}}" error="{{error}}" />
+        <view class='userMsg'>
+          <view class='head'>
+            <image class="headImg" src='{{item.faceImage}}' mode="aspectFit"></image>
+            <view class='name'>{{item.nickname}}</view>
+          </view>
+          <view class='info' style=''>{{item.videoDesc}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

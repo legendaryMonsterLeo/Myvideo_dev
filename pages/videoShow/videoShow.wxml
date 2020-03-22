@@ -1,0 +1,68 @@
+<wxs src='../../utils/categoryData.wxs' module="tools" />
+<view class="bodyColumn">
+  <view class='searchPlace'>
+    <view class='titleCenter'>
+      <!-- 导航下划线 -->
+      <view bindtap="titleClick" class="titleArea">
+        <view data-titleClick="{{index}}" id="item{{index}}" class='title {{titleClick === index ? "" : "" }}' wx:for="{{title}}" wx:key="">
+          {{item}}
+        </view>
+      </view>
+      <view class=' redBorder ' style="position:absolute;left:{{0+50*titleClick}}%;bottom:0;width:{{titleWidth}}px;height:{{titleHeight}}px"></view>
+    </view>
+  </view>
+
+  <!-- tab页面 -->
+  <view>
+    <swiper current="{{titleClick}}" bindchange="switchTab" class="swiperBlock" style="height:{{swiperHeight}}px">
+      <swiper-item>
+        <scroll-view class="scroll-view" scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrollToLower">
+          <pullDownRefresh data-index="0" refreshing="{{refreshing[0]}}" refreshed="{{refreshed[0]}}" bind:refresh="refresh">
+            <!-- 广告展示 -->
+
+            <view>
+              <text class='title'>广告></text>
+              <view class="page-section page-section-spacing swiper">
+                <swiper autoplay='true' circular="true" interval="3000" duration="500">
+                  <block wx:for="{{background}}" wx:key="*this">
+                    <swiper-item>
+                      <image src='{{item.url}}' mode='aspectFill' class='swiperimg'></image>
+                    </swiper-item>
+                  </block>
+                </swiper>
+              </view>
+            </view>
+            <view class="hr"></view>
+
+
+            <view class="container">
+              <ab-waterfall class="waterfall" page-no="{{pageNo}}" page-src="{{pageSrc}}" column-count="2" binditemtap="itemTap" />
+            </view>
+          </pullDownRefresh>
+        </scroll-view>
+      </swiper-item>
+
+      <!-- 关注 -->
+      <swiper-item>
+        <scroll-view class="body2" scroll-y="true" upper-threshold="50" lower-threshold="100" bindscrolltolower="scrollToLower2">
+          <pullDownRefresh data-index="1" refreshing="{{refreshing[1]}}" refreshed="{{refreshed[1]}}" bind:refresh="refresh">
+
+            <view class="item" wx:for="{{followVideoList}}" wx:key="">
+              <view class="item-head">
+                <image src="{{item.faceImage}}" class="item-faceimage" data-arrindex="{{index}}" bindtap="goToRoom"></image>
+                <text class="item-nickName">{{item.nickname}}</text>
+              </view>
+              <view class="item-foot">
+                  <image src="{{item.photho1==null?'../resource/images/noneface.png':serverUrl+item.photho1}}" class="item-image"></image>
+                  <image src="{{item.photho2==null?'../resource/images/noneface.png':serverUrl+item.photho2}}" class="item-image"></image>
+                  <image src="{{item.photho3==null?'../resource/images/noneface.png':serverUrl+item.photho3}}" class="item-image"></image>
+              </view>
+              <view class="line"></view>
+            </view>
+
+          </pullDownRefresh>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

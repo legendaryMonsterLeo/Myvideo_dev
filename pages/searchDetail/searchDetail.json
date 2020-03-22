@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "ab-waterfall": "../../components/abui/widgets/ab-waterfall/ab-waterfall"
+  },
+  "navigationBarBackgroundColor": "#ffff"
+}

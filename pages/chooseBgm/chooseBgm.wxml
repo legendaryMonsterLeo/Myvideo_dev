@@ -1,20 +1,33 @@
 <view>
   <form bindsubmit="upload">
-    <radio-group name="bgmId">
-      <block wx:for="{{bgmList}}">
-        <view class="container">
-          <audio name="{{item.name}}" author="{{item.author}}" src="{{serverUrl}}{{item.path}}" style="width:300px" id="myAudio" controls loop>
-          </audio>
-          <radio style="margin-top:20px" value="{{item.id}}"></radio>
-        </view>
-      </block>
-    </radio-group>
+    <scroll-view scroll-y="true" style="height: 317rpx;">
+      <radio-group name="bgmId">
+        <block wx:for="{{bgmList}}">
+          <view class="container">
+            <audio name="{{item.name}}" author="{{item.author}}" src="{{serverUrl}}{{item.path}}" style="width:300px" id="myAudio" controls loop>
+            </audio>
+            <radio style="margin-top:20px" value="{{item.id}}"></radio>
+          </view>
+        </block>
+      </radio-group>
+    </scroll-view>
     <view class="conts">
-      <label class="label">视频描述</label>
-      <textarea class="areas" placeholder='视频描述' maxlength="{{VideoNoteMax}}" bindinput="inputs">
+      <!-- <label class="label">视频描述</label> -->
+      <textarea class="areas" placeholder='视频描述' maxlength="{{VideoNoteMax}}" bindinput="inputs" name="desc">
         <text class="currentWordNumber">{{currentWordNumber|0}}/{{VideoNoteMax}}</text>
-        <text class="hint">{{texts}}</text>
+        <text class="hint"></text>
       </textarea>
+    </view>
+    <view>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <radio class="radio" wx:for-items="{{kinds}}" wx:key="name" value="{{item.value}}" checked="{{item.checked}}">
+          <text style="font-size:22rpx">{{item.name}}</text>
+        </radio>
+      </radio-group>
+    </view>
+    <view class="chooseCover">
+      <button type="default" size="mini" bindtap="chooseCover" wx:if="{{imageSrc ==''}}">添加封面</button>
+      <image src="{{imageSrc}}" wx:if="{{imageSrc !=''}}" class="cover"></image>
     </view>
     <button class="submitButton" type="primary" form-type="submit">上传视频</button>
     <button class="resetButton" type="warn" form-type="reset">重置</button>

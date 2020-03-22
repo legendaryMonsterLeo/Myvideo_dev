@@ -38,8 +38,8 @@ Page({
               duration: 3000
             }),
               app.setGlobalUserInfo(res.data.data);
-            wx.redirectTo({
-              url: '../index/index',
+            wx.switchTab({
+              url: '/pages/videoShow/videoShow',
             })
           } else {
             wx.showToast({
